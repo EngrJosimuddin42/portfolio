@@ -9,18 +9,17 @@ const Navbar = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [toast, setToast] = useState({ message: "", type: "" });
 
-  // Scroll Spy + Navbar Shrink
+  // ScrollSpy + Navbar shrink
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + 200;
+      const scrollPos = window.scrollY + 100; // offset for navbar height
       let current = "home";
 
       sections.forEach((section) => {
-        const element = document.getElementById(section);
-        if (element && element.offsetTop <= scrollPosition) {
-          current = section;
-        }
+        const el = document.getElementById(section);
+        if (el && el.offsetTop <= scrollPos) current = section;
       });
+
       setActiveSection(current);
       setIsScrolled(window.scrollY > 80);
     };
@@ -29,11 +28,24 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Scroll to section helper
+  const scrollToSection = (section) => {
+    const el = document.getElementById(section);
+    if (!el) return;
+    window.scrollTo({
+      top: el.offsetTop - 70, // navbar height offset
+      behavior: "smooth",
+    });
+    setIsOpen(false);
+  };
+
+  // Toast helper
   const showToast = (message, type) => {
     setToast({ message, type });
     setTimeout(() => setToast({ message: "", type: "" }), 2500);
   };
 
+  // Search form
   const handleSearch = (e) => {
     e.preventDefault();
     const targetSection = searchQuery.toLowerCase().trim();
@@ -41,14 +53,10 @@ const Navbar = () => {
     if (!sections.includes(targetSection)) {
       showToast(`Section '${targetSection}' not found!`, "error");
     } else {
-      const element = document.getElementById(targetSection);
-      if (element) element.scrollIntoView({ behavior: "smooth" });
-      // Optional: success message
-      // showToast(`Section '${targetSection}' found!`, "success");
+      scrollToSection(targetSection);
     }
 
     setSearchQuery("");
-    setIsOpen(false);
   };
 
   return (
@@ -59,10 +67,10 @@ const Navbar = () => {
           : "bg-gradient-to-r from-blue-800 via-blue-700 to-blue-600/80 backdrop-blur-sm py-4"
       }`}
     >
-      {/* Toast message */}
+      {/* Toast */}
       {toast.message && (
         <div
-          className={`fixed top-4 left-1/2 transform -translate-x-1/2 z-50 min-w-[220px] px-5 py-3 rounded-md text-white font-medium text-center pointer-events-none animate-toast ${
+          className={`fixed top-4 left-1/2 transform -translate-x-1/2 z-50 min-w-[220px] px-5 py-3 rounded-md text-white font-medium text-center pointer-events-none ${
             toast.type === "success" ? "bg-green-600" : "bg-red-600"
           }`}
         >
@@ -71,14 +79,15 @@ const Navbar = () => {
       )}
 
       <div className="container mx-auto flex justify-between items-center px-6">
-        {/* Left: Logo + Search Box */}
+        {/* Logo + Search */}
         <div className="flex items-center space-x-4">
-          {/* Logo */}
-          <h1 className="text-2xl font-bold text-white hover:text-green-300 tracking-wide hover:scale-105 transition">
+          <h1
+            className="text-2xl font-bold text-white hover:text-green-300 tracking-wide hover:scale-105 transition cursor-pointer"
+            onClick={() => scrollToSection("home")}
+          >
             Engr. Josimuddin
           </h1>
 
-          {/* Search Box */}
           <form
             onSubmit={handleSearch}
             className="flex items-center bg-white rounded-lg overflow-hidden border border-gray-300"
@@ -111,9 +120,9 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center space-x-6">
           {sections.map((section) => (
-            <a
+            <button
               key={section}
-              href={`#${section}`}
+              onClick={() => scrollToSection(section)}
               className={`relative transition-all duration-200 ${
                 activeSection === section
                   ? "text-yellow-400 font-semibold after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-[2px] after:bg-yellow-400"
@@ -121,7 +130,7 @@ const Navbar = () => {
               }`}
             >
               {section.charAt(0).toUpperCase() + section.slice(1)}
-            </a>
+            </button>
           ))}
         </div>
 
@@ -186,10 +195,9 @@ const Navbar = () => {
           </form>
 
           {sections.map((section) => (
-            <a
+            <button
               key={section}
-              href={`#${section}`}
-              onClick={() => setIsOpen(false)}
+              onClick={() => scrollToSection(section)}
               className={`block transition ${
                 activeSection === section
                   ? "text-yellow-400 font-semibold"
@@ -197,7 +205,7 @@ const Navbar = () => {
               }`}
             >
               {section.charAt(0).toUpperCase() + section.slice(1)}
-            </a>
+            </button>
           ))}
         </div>
       )}
