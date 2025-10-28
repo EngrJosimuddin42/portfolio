@@ -1,16 +1,61 @@
-# React + Vite
+# 🌐 Engr. Josimuddin — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Portfolio Banner](https://img.shields.io/badge/React-%5E18-blue?style=for-the-badge&logo=react)
+![Vite](https://img.shields.io/badge/Vite-5A29E4?style=for-the-badge&logo=vite&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
-Currently, two official plugins are available:
+## ✨ Live Demo  
+👉 **[View Portfolio](https://engrjosimuddin.github.io/portfolio/)**  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🧑‍💻 About This Project
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This is my **personal portfolio website** built using **React + Vite + Tailwind CSS**.  
+It showcases my education, skills, and projects in a clean, modern, and responsive layout.  
 
-## Expanding the ESLint configuration
+Key highlights:
+- Smooth scrolling navigation 🔄  
+- Animated hero section 🌈  
+- Mobile responsive design 📱  
+- Toast notifications & Search feature 🔍  
+- Built for performance & accessibility ⚡  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🚀 Tech Stack
+
+| Category | Technologies |
+|-----------|---------------|
+| **Frontend** | React, Vite |
+| **Styling** | Tailwind CSS |
+| **Animation** | CSS Keyframes, Framer Motion |
+| **Hosting** | GitHub Pages |
+| **Version Control** | Git & GitHub |
+
+---
+
+🧑‍🎓 Developer Info
+
+👤 Engr.Josimuddin
+🎓 BSc in Computer Science & Engineering
+💼 Flutter Developer | Web Designer
+📍 Dhaka, Bangladesh
+
+🌐 Portfolio: engrjosimuddin.github.io/portfolio
+
+🔗 LinkedIn: linkedin.com/in/engrjosimuddin
+
+💻 GitHub: github.com/EngrJosimuddin42
+
+----
+
+📜 License
+
+This project is licensed under the MIT License — feel free to use and modify it with proper credit.
+
+----
+
+⭐ If you like this project, don’t forget to give it a star! ⭐
+
