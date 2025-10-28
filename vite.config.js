@@ -3,5 +3,8 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/portfolio/',
+  base: '/portfolio/',  // GitHub repo নাম
+ build: {
+    outDir: 'docs' // ⚠️ build output হবে docs ফোল্ডারে
+  }
 })
