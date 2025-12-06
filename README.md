@@ -45,7 +45,7 @@ Key highlights:
 
 🌐 Portfolio: https://engrjosimuddin42.github.io/portfolio/
 
-🔗 LinkedIn: linkedin.com/in/engrjosimuddin
+🔗 LinkedIn: https:// linkedin.com/in/engrjosimuddin
 
 💻 GitHub: https://github.com/EngrJosimuddin42
 
