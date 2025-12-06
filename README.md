@@ -47,7 +47,7 @@ Key highlights:
 
 🔗 LinkedIn: linkedin.com/in/engrjosimuddin
 
-💻 GitHub: github.com/EngrJosimuddin42
+💻 GitHub: https://github.com/EngrJosimuddin42
 
 ----
 
