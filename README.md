@@ -43,7 +43,7 @@ Key highlights:
 💼 Flutter Developer | Web Designer
 📍 Dhaka, Bangladesh
 
-🌐 Portfolio: engrjosimuddin.github.io/portfolio
+🌐 Portfolio: https://engrjosimuddin42.github.io/portfolio/
 
 🔗 LinkedIn: linkedin.com/in/engrjosimuddin
 
